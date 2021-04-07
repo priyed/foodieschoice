@@ -64,7 +64,7 @@ const Navbar = () => {
       </div>
 
       <div className="name">
-        <h3>foodies choice</h3>
+        <p>foodies choice</p>
       </div>
 
       <div className="cart-container">
