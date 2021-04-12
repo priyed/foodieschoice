@@ -1,13 +1,12 @@
 .about {
-    margin: 140px 30px;
+    margin: 140px 30px 100px;
     text-align: center;
 }
 
 .about h3 {
-    text-transform: uppercase;
     text-align: center;
     max-width: 60ch;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 400;
     line-height: 1.5;
     margin: 30px auto;
@@ -22,9 +21,11 @@
 
 .about a {
     text-decoration: none;
+    font-family: 'Poppins';
+    font-weight: 400;
     color: #000;
     text-transform: lowercase;
-    font-size: 17px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;

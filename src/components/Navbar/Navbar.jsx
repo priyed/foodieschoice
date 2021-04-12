@@ -113,8 +113,8 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a className="link" href="#contact" onClick={closeNav}>
-              Contact
+            <a className="link" href="#shop" onClick={closeNav}>
+              Shop
             </a>
           </li>
         </ul>
@@ -128,8 +128,8 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a className="link" href="#contact">
-              Contact
+            <a className="link" href="#shop">
+              Shop
             </a>
           </li>
         </ul>

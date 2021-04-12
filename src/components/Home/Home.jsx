@@ -1,9 +1,10 @@
 import React from "react";
 import Header from "../Header/Header";
 import { Button } from '@material-ui/core';
+import Categories from './Categories/Categories'
 import "./styles.css";
 
-const Home = () => {
+const Home = ({ categories }) => {
   return (
     <div className="home-container">
       <Header />
@@ -31,6 +32,7 @@ const Home = () => {
         </a>
         </Button>
       </div>
+      <Categories categories={categories} />
     </div>
   );
 };

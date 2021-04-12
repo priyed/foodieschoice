@@ -1,0 +1,19 @@
+.blue-container {
+    background-color: #F4FAFB;
+    width: 100%;
+}
+
+.categories-container {
+    padding-top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.categories-container h3 {
+    font-family: 'Playfair Display';
+    font-size: 34px;
+    margin-bottom: 50px;
+    font-weight: 500;
+}
