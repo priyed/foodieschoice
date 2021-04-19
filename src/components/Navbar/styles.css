@@ -1,9 +1,9 @@
 .navigation {
-    background: transparent;
+    background: #1e1e1e;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     height: 90px;
@@ -18,7 +18,9 @@
     left: 90px;
 }
 
-.name p {
+.name .home-link {
+    text-decoration: none;
+    color: #f1f1f1;
     font-weight: 700;
     font-size: 23px;
     letter-spacing: -1.5px;
@@ -51,7 +53,7 @@
     height: auto;
     margin-left: 30px;
     position: absolute;
-    top: 22px;
+    top: 20px;
     cursor: pointer;
     transition: all 0.4s;
 }

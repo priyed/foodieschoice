@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { debounce } from "../../utilities/helpers";
 import "./styles.css";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ totalItems }) => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
@@ -64,7 +64,9 @@ const Navbar = () => {
       </div>
 
       <div className="name">
-        <p>foodies choice</p>
+        <Link className="home-link" to="/">
+          <p>foodies choice</p>
+        </Link>
       </div>
 
       <div className="cart-container">
@@ -103,34 +105,34 @@ const Navbar = () => {
         </a>
         <ul id="menu">
           <li>
-            <a className="link" href="#home" onClick={closeNav}>
+            <Link className="link" to="/" onClick={closeNav}>
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="link" href="#about" onClick={closeNav}>
+            <Link className="link" to="/about" onClick={closeNav}>
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="link" href="#shop" onClick={closeNav}>
+            <Link className="link" to="/shop" onClick={closeNav}>
               Shop
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
-       {/*Desktop Navigation */}
-       <div className="desktop-navigation">
+      {/*Desktop Navigation */}
+      <div className="desktop-navigation">
         <ul>
           <li>
-            <a className="link" href="#about">
+            <Link className="link" to="/about">
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="link" href="#shop">
+            <Link className="link" to="/shop">
               Shop
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
