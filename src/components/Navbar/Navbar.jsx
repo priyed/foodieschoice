@@ -68,11 +68,14 @@ const Navbar = ({ totalItems }) => {
           <p>foodies choice</p>
         </Link>
       </div>
+    
+      <Link to="/cart" className="link">
+      <div className="cart-icon-container">
+     
 
-      <div className="cart-container">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 cart"
+          className="w-6 h-6 cart"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -84,8 +87,9 @@ const Navbar = ({ totalItems }) => {
             d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
           />
         </svg>
-        <span className="badge">0</span>
+        <span className="badge">{totalItems}</span>
       </div>
+      </Link>
 
       <div id="mySidenav" className="sidenav">
         <a href="#c" className="closebtn" onClick={closeNav}>

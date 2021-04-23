@@ -2,7 +2,7 @@ import React from 'react';
 import Product from '../Products/Product/Product';
 import ShopNavigation from "../ShopNavigation/ShopNavigation"
 
-const Dinner = ({ products, categories }) => {
+const Dinner = ({ products, categories, onAddToCart }) => {
 
      const filterProductsByCategory = (categoryName) => {
          const cat = categories.find(category => category.name === categoryName);
@@ -18,7 +18,7 @@ const Dinner = ({ products, categories }) => {
         <ShopNavigation categories={categories} />
         <div className="section-center">
             {filterProductsByCategory("Dinner").map((product) => (
-                <Product product={product} />
+                <Product product={product} addToCart={onAddToCart}/>
             ))}
         </div>
         </>

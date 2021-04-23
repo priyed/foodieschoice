@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import { Button } from "@material-ui/core"
 
-const Product = ({ product }) => {
+const Product = ({ product, addToCart }) => {
   return (
     
       <article className="product-card">
@@ -16,7 +16,7 @@ const Product = ({ product }) => {
             dangerouslySetInnerHTML={{ __html: product.description }}
             className="product-description"
           />
-         <Button>ADD TO BAG</Button>
+         <Button onClick={() => addToCart(product.id, 1)}>ADD TO BAG</Button>
         </div>
       </article>
   );

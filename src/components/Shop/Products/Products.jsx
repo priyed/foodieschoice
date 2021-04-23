@@ -1,14 +1,14 @@
 import React from "react";
 import Product from "./Product/Product";
-import './style.css';
+import "./style.css";
 
-const Products = ({ products, categories }) => {
+const Products = ({ products, addToCart }) => {
   return (
-    <div className="section-center">        {products.map((product) => (
-         
-            <Product product={product} />
-        ))}
-
+    <div className="section-center">
+      {" "}
+      {products.map((product) => (
+        <Product product={product} addToCart={addToCart} />
+      ))}
     </div>
   );
 };

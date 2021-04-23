@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { commerce } from "./lib/commerce";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
-import Home from "./components/Home/Home";
-import Shop from "./components/Shop/Shop";
-import All from "./components/Shop/ShopCategory/All";
-import Breakfast from "./components/Shop/ShopCategory/Breakfast";
-import Lunch from "./components/Shop/ShopCategory/Lunch";
-import Dinner from "./components/Shop/ShopCategory/Dinner";
+import { Cart, Navbar, Shop, All, Breakfast, Lunch, Dinner, Home } from "./components/index";
 
 const App = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [cart, setCart] = useState([]);
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
@@ -25,37 +20,71 @@ const App = () => {
     setCategories(data);
   };
 
+  const fetchCart = async () => {
+    setCart(await commerce.cart.retrieve());
+  };
+
+  const handleAddToCart = async (productId, quantity) => {
+    const { cart } = await commerce.cart.add(productId, quantity);
+    setCart(cart);
+  };
+
+  const handleRemoveFromCart = async (productId) => {
+    const { cart } = await commerce.cart.remove(productId);
+
+    setCart(cart);
+  };
+
+  const handleEmptyCart = async () => {
+    const { cart } = await commerce.cart.empty();
+
+    setCart(cart);
+  };
+
+  const handleUpdateCartQuantity = async (productId, quantity) => {
+    const { cart } = await commerce.cart.update(productId, { quantity });
+
+    setCart(cart);
+  };
+
   useEffect(() => {
     fetchProducts();
     fetchCategories();
+    fetchCart();
   }, []);
-
-  console.log(products);
-  console.log(categories);
 
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Navbar totalItems={cart.total_items}/>
         <Switch>
           <Route exact path="/">
             <Home categories={categories} />
           </Route>
 
           <Route exact path="/shop">
-            <Shop products={products} categories={categories} />
+            <Shop products={products} categories={categories} onAddToCart={handleAddToCart}/>
           </Route>
           <Route exact path="/shop/all">
-            <All products={products} categories={categories} />
+            <All products={products} categories={categories} onAddToCart={handleAddToCart} />
           </Route>
           <Route exact path="/shop/breakfast">
-            <Breakfast products={products} categories={categories} />
+            <Breakfast products={products} categories={categories} onAddToCart={handleAddToCart}/>
           </Route>
           <Route exact path="/shop/lunch">
-            <Lunch products={products} categories={categories} />
+            <Lunch products={products} categories={categories} onAddToCart={handleAddToCart}/>
           </Route>
           <Route exact path="/shop/dinner">
-            <Dinner products={products} categories={categories} />
+            <Dinner products={products} categories={categories} onAddToCart={handleAddToCart}/>
+          </Route>
+
+          <Route exact path="/cart">
+            <Cart
+              cart={cart}
+              handleEmptyCart={handleEmptyCart}
+              handleRemoveFromCart={handleRemoveFromCart}
+              handleUpdateCartQuantity={handleUpdateCartQuantity}
+            />
           </Route>
         </Switch>
       </div>
