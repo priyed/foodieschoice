@@ -1,7 +1,7 @@
 .cart-item-card {
     display: grid;
     gap: 1rem 2rem;
-    max-width: 20rem;
+    max-width: 17rem;
 }
 
 .item-image {
@@ -31,6 +31,7 @@
 
 .addandsubBtns {
     display: flex;
+    border-top: 3px solid black;
     border-radius: 3px;
 }
 
@@ -40,7 +41,7 @@
 }
 
 .addandsubBtns, .item-buttons .remove-btn {
-    transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
 }
 
 .item-buttons .remove-btn {

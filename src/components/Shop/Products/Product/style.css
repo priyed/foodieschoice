@@ -1,7 +1,7 @@
 .product-card {
     display: grid;
-    gap: 1rem 2rem;
-    max-width: 25rem;
+    gap: 1rem;
+    max-width: 19rem;
 }
 
 .product-card img {
@@ -52,6 +52,5 @@
 @media screen and (min-width: 768px) {
     .product-card {
       gap: 0 1.25rem;
-      max-width: 25rem;
     }
   }

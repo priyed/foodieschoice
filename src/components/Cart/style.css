@@ -1,8 +1,19 @@
+/* Start Filled cart styling  */
+
+.filled-cart-header {
+  text-align: center;
+  margin: 50px auto;
+  padding-bottom: 10px;
+  font-size: 30px;
+  border-bottom: 3px solid black;
+}
+
 .actions-container {
   border-top: 3px solid black;
+  border-bottom: 3px solid black;
   background-color: #f4fafb;
   width: 100%;
-  margin-top: 60px;
+  margin: 60px auto;
 }
 
 .cart_totalandActions {
@@ -15,6 +26,14 @@
 .total-items {
   margin-top: 20px;
   font-size: 15px;
+  text-align: center;
+}
+
+.add-more {
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
+  border-bottom: 4px double black;
 }
 
 .price-details span {
@@ -23,26 +42,67 @@
   border-bottom: 1px dotted black;
 }
 
-.cart-actions .empty-cart,
-.cart-actions .checkout {
+.cart-actions {
+  display: flex;
+}
+
+.cart-actions .empty-cart-btn,
+.cart-actions .checkout-btn {
   font-family: "Poppins";
   margin: 0 20px 40px;
   border: 3px solid black;
-  padding: 15px 20px;
+  padding: 8px 20px;
   transition: all 0.3s ease-in-out;
 }
 
-.cart-actions .empty-cart:hover {
+.cart-actions .empty-cart-btn:hover {
   background-color: black;
   color: white;
 }
 
-.cart-actions .checkout {
+.cart-actions .checkout-btn {
   background-color: black;
   color: white;
 }
 
-.cart-actions .checkout:hover {
+.cart-actions .checkout-btn:hover {
   background-color: transparent;
   color: black;
 }
+
+/* End Filled cart styling  */
+
+/* Start Empty cart styling */
+.empty-cart-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0 auto;
+  justify-content: center;
+}
+
+.empty-cart-container p {
+  font-size: 20px;
+}
+
+.empty-cart-container .shop-link {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.empty-cart-container Button {
+  text-align: center;
+  border: 3px solid black;
+  font-family: 'Poppins';
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+}
+
+.empty-cart-container Button:hover {
+  color: black;
+}
+
+/* End empty cart styling */

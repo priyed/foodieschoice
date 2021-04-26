@@ -1,12 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { commerce } from "./lib/commerce";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Cart, Navbar, Shop, All, Breakfast, Lunch, Dinner, Home } from "./components/index";
+import {
+  Cart,
+  Navbar,
+  Shop,
+  All,
+  Breakfast,
+  Lunch,
+  Dinner,
+  Home,
+} from "./components/index";
 
 const App = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [cart, setCart] = useState([]);
+  const [order, setOrder] = useState({});
+  const [errorMessage, setErrorMessage] = useState("");
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
@@ -56,26 +67,46 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-        <Navbar totalItems={cart.total_items}/>
+        <Navbar totalItems={cart.total_items} />
         <Switch>
           <Route exact path="/">
             <Home categories={categories} />
           </Route>
 
           <Route exact path="/shop">
-            <Shop products={products} categories={categories} onAddToCart={handleAddToCart}/>
+            <Shop
+              products={products}
+              categories={categories}
+              onAddToCart={handleAddToCart}
+            />
           </Route>
           <Route exact path="/shop/all">
-            <All products={products} categories={categories} onAddToCart={handleAddToCart} />
+            <All
+              products={products}
+              categories={categories}
+              onAddToCart={handleAddToCart}
+            />
           </Route>
           <Route exact path="/shop/breakfast">
-            <Breakfast products={products} categories={categories} onAddToCart={handleAddToCart}/>
+            <Breakfast
+              products={products}
+              categories={categories}
+              onAddToCart={handleAddToCart}
+            />
           </Route>
           <Route exact path="/shop/lunch">
-            <Lunch products={products} categories={categories} onAddToCart={handleAddToCart}/>
+            <Lunch
+              products={products}
+              categories={categories}
+              onAddToCart={handleAddToCart}
+            />
           </Route>
           <Route exact path="/shop/dinner">
-            <Dinner products={products} categories={categories} onAddToCart={handleAddToCart}/>
+            <Dinner
+              products={products}
+              categories={categories}
+              onAddToCart={handleAddToCart}
+            />
           </Route>
 
           <Route exact path="/cart">
