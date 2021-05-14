@@ -13,7 +13,6 @@ const Cart = ({
   const EmptyCart = () => (
     <div className="section-center">
       <div className="empty-cart-container">
-        
         <div className="empty-cart-emoji">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -40,9 +39,8 @@ const Cart = ({
 
   const FilledCart = () => (
     <>
-    <h3 className="filled-cart-header">Your Meal Bag</h3>
+      <h3 className="filled-cart-header">Your Meal Bag</h3>
       <div className="section-center">
-      
         {cart.line_items.map((item) => (
           <Cartitem
             item={item}
@@ -55,9 +53,19 @@ const Cart = ({
         <div className="cart_totalandActions section-center">
           <div className="total-items">
             {cart.total_items === 1 ? (
-              <p>You have {cart.total_items} item in your bag. <Link to="/shop" className="add-more">ADD SOME MORE</Link></p>
+              <p>
+                You have {cart.total_items} item in your bag.{" "}
+                <Link to="/shop" className="add-more">
+                  ADD SOME MORE
+                </Link>
+              </p>
             ) : (
-              <p>You have {cart.total_items} items in your bag. <Link to="/shop" className="add-more">ADD MORE</Link></p>
+              <p>
+                You have {cart.total_items} items in your bag.{" "}
+                <Link to="/shop" className="add-more">
+                  ADD MORE
+                </Link>
+              </p>
             )}
           </div>
           <div className="price-details">
@@ -78,7 +86,12 @@ const Cart = ({
     </>
   );
 
-  if (!cart.line_items) return "Loading...";
+  if (!cart.line_items)
+    return (
+      <div className="loader section-center">
+        <p>Loading...</p>
+      </div>
+    );
   return (
     <div className="">
       {!cart.line_items.length ? <EmptyCart /> : <FilledCart />}

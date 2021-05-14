@@ -6,3 +6,4 @@ export { default as Breakfast } from "./Shop/ShopCategory/Breakfast";
 export { default as Lunch } from "./Shop/ShopCategory/Lunch";
 export { default as Dinner } from "./Shop/ShopCategory/Dinner";
 export { default as Cart } from "./Cart/Cart";
+export { default as Checkout } from "./CheckoutForm/Checkout/Checkout";

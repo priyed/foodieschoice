@@ -1,0 +1,29 @@
+.checkout-layout {
+    font-family: 'Poppins';
+    margin: 30px auto;
+    width: 90vw;
+    max-width: 600px;
+}
+
+.checkout-heading {
+    text-align: center;
+    margin: 50px auto;
+    padding-bottom: 10px;
+    font-size: 30px;
+    border-bottom: 3px solid black;
+}
+
+.checkout-heading h4 {
+    font-size: 30px;    
+    margin: auto;
+}
+
+.paper .stepper {
+    margin: 20px;
+}
+
+.step {
+    font-family: 'Poppins';
+    font-size: 12px;
+    font-weight: bolder;
+}

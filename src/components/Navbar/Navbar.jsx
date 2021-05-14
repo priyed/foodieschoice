@@ -92,10 +92,10 @@ const Navbar = ({ totalItems }) => {
       </Link>
 
       <div id="mySidenav" className="sidenav">
-        <a href="#c" className="closebtn" onClick={closeNav}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
+            className="closebtn" onClick={closeNav}
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
@@ -106,7 +106,6 @@ const Navbar = ({ totalItems }) => {
               d="M6 18L18 6M6 6l12 12"
             />
           </svg>
-        </a>
         <ul id="menu">
           <li>
             <Link className="link" to="/" onClick={closeNav}>

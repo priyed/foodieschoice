@@ -1,11 +1,11 @@
 import React from "react";
-import "./style.css";
+import "./styles.css";
 import { Button } from "@material-ui/core"
 
 const Product = ({ product, addToCart }) => {
   return (
     
-      <article className="product-card">
+      <div className="product-card">
         <img src={product.media.source} alt={product.name} />
         <div className="product-details">
           <header>
@@ -18,7 +18,7 @@ const Product = ({ product, addToCart }) => {
           />
          <Button onClick={() => addToCart(product.id, 1)}>ADD TO BAG</Button>
         </div>
-      </article>
+      </div>
   );
 };
 
