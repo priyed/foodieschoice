@@ -13,7 +13,7 @@
 }
 
 .name {
-  margin-top: 25px;
+  margin-top: 30px;
   position: absolute;
   left: 90px;
 }
@@ -21,8 +21,8 @@
 .name .home-link {
   text-decoration: none;
   color: #f1f1f1;
-  font-weight: 700;
-  font-size: 23px;
+  font-weight: 500;
+  font-size: 20px;
   letter-spacing: -1.5px;
 }
 
@@ -36,23 +36,24 @@
 
 .cart {
   cursor: pointer;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
 }
 
 .cart-icon-container .badge {
   position: absolute;
-  right: -6px;
-  top: 0;
+  right: 0;
+  top: 3px;
   font-size: 12px;
 }
 
 .menubtn {
-  width: 40px;
+  width: 35px;
   height: auto;
   margin-left: 30px;
   position: absolute;
-  top: 20px;
+  top: 25px;
   cursor: pointer;
   transition: all 0.4s;
 }
@@ -183,7 +184,4 @@
   .cart-container {
     margin-right: 70px;
   }
-}
-
-@media screen and (min-width: 1200px) {
 }
